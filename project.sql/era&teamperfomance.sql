@@ -65,3 +65,56 @@ FROM ERA
 GROUP BY decade
 ORDER BY decade;
 DROP TEMPORARY TABLE ERA;
+--Identify which teams consistently produce top-performing players
+CREATE VIEW performance_ranking AS(
+    SELECT player_name,
+        points_per_game,
+        assist_per_game,
+        rebound,
+        season,
+        team_abbreviation,
+        net_rating,
+        RANK() OVER(
+            PARTITION BY season
+            ORDER BY points_per_game DESC
+        ) AS pts_rank,
+        RANK() OVER(
+            PARTITION BY season
+            ORDER BY assist_per_game DESC
+        ) AS ast_rank,
+        RANK() OVER(
+            PARTITION BY season
+            ORDER BY rebound DESC
+        ) AS rbd_rank,
+        RANK() OVER(
+            PARTITION BY season
+            ORDER BY net_rating DESC
+        ) AS net_rank
+    FROM allseasons
+);
+SELECT *
+FROM performance_ranking;
+--top players by points per game
+SELECT player_name,
+    team_abbreviation,
+    season,
+    points_per_game,
+    net_rating
+FROM performance_ranking
+WHERE pts_rank <= 5;
+--top players by assists per game 
+SELECT player_name,
+    team_abbreviation,
+    season,
+    assist_per_game,
+    net_rating
+FROM performance_ranking
+WHERE ast_rank <= 5;
+--top players by rebounds
+SELECT player_name,
+    team_abbreviation,
+    season,
+    rebound,
+    net_rating
+FROM performance_ranking
+WHERE rbd_rank <= 5;
