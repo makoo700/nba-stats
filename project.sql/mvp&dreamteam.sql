@@ -106,7 +106,7 @@ WITH nba_mvp AS (
         'Stephen Curry'
     UNION ALL
     SELECT '2016',
-        'Kevin Durant'
+        'Russell Westbrook'
     UNION ALL
     SELECT '2017',
         'James Harden'
@@ -115,19 +115,19 @@ WITH nba_mvp AS (
         'Giannis Antetokounmpo'
     UNION ALL
     SELECT '2019',
-        'LeBron James'
-    UNION ALL
-    SELECT '2020',
         'Giannis Antetokounmpo'
     UNION ALL
+    SELECT '2020',
+        'Nikola Jokic'
+    UNION ALL
     SELECT '2021',
-        'Nikola Jokić'
+        'Nikola Jokic'
     UNION ALL
     SELECT '2022',
-        'Nikola Jokić'
+        'Joel Embiid'
     UNION ALL
     SELECT '2023',
-        'Nikola Jokić'
+        'Nikola Jokic'
 ),
 your_mvp AS (
     WITH mvp_index AS (
@@ -199,9 +199,12 @@ WITH player_roles AS (
             WHEN player_height <= 198
             AND points_per_game >= 18
             AND assist_per_game < 6 THEN 'SG' -- Small Forward: 6'6"–6'9" (198–206 cm), versatile
-            WHEN player_height BETWEEN 198 AND 206 THEN 'SF' -- Power Forward: 6'8"–6'11" (203–211 cm), rebounds, scores inside
-            WHEN player_height BETWEEN 203 AND 211 THEN 'PF' -- Center: 6'10"+ (208 cm+), rebounds, blocks, low assists
-            WHEN player_height >= 208 THEN 'C'
+            WHEN player_height BETWEEN 198 AND 206
+            AND points_per_game >= 15 THEN 'SF' -- Power Forward: 6'8"–6'11" (203–211 cm), rebounds, scores inside
+            WHEN player_height BETWEEN 203 AND 211
+            AND rebound >= 6 THEN 'PF' -- Center: 6'10"+ (208 cm+), rebounds, blocks, low assists
+            WHEN player_height >= 208
+            AND rebound >= 10 THEN 'C'
             ELSE 'Other'
         END AS estimated_position
     FROM allseasons
