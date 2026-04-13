@@ -67,6 +67,8 @@ Handled Outliers: Resolved the outliers by getting the average of players with o
 ## Player Performance Analysis
 
 - Comparing efficiency stats: There is little to no correlation between true shooting percentage and usage rate for players averaging above 25 points per game.Volume scorers don't sacrifice efficiency.
+  <img width="576" height="455" alt="TS vs usage rate comp" src="https://github.com/user-attachments/assets/dbb49949-565c-4569-a4fe-878d9b5b63a3" />
+
 - Most improved players across seasons:
   - Scoring: MarShon Brooks improved by 15.6 points in 2017, Louis King by 15.5 points in 2022 and JaKarr Sampson 15.3 points in 2018.
 
