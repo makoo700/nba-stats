@@ -151,21 +151,21 @@ evaluating player performance, predicting MVPs, and constructing a dream team
     predictive accuracy**.
 
 - **Outlier Handling**: Replacing outliers with player averages is a 
-  reasonable approach, but **may not always be accurate** — especially for 
+  reasonable approach, but **may not always be accurate** - especially for 
   players with small sample sizes (e.g., injured players with few games). 
   A more robust approach would:
   - Filter by **minimum games played** (e.g., ≥ 50 games)
   - Use **median** instead of mean for skewed distributions
 
 - **Correlation Analysis**: The observation that **volume scorers don't 
-  sacrifice efficiency** was based on visual inspection — not a formal 
+  sacrifice efficiency** was based on visual inspection - not a formal 
   statistical test. A more rigorous analysis would:
   - Calculate **Pearson's r** between usage rate and TS%
   - Test for **statistical significance** (p-value < 0.05)
   - Control for **position and era** to avoid confounding variables
 
 - **Era Comparisons**: The finding that players were taller and heavier in 
-  the 2000s needs **further validation** — specifically:
+  the 2000s needs **further validation** - specifically:
   - Breaking down size trends **by position** (e.g., are centers getting 
     shorter? Are guards getting taller?)
   - Accounting for **rule changes** (e.g., hand-checking rules in 2004) 
@@ -196,8 +196,8 @@ To build on this analysis, future work could include:
 This project laid a **strong foundation** for NBA performance analysis using 
 SQL. While some findings are **statistically sound and well-supported**, others 
 require **deeper investigation and more sophisticated methods** to be fully 
-validated. The insights generated here are a **starting point** — not a final 
-verdict — and serve as a compelling case for the power of **data-driven 
+validated. The insights generated here are a **starting point** - not a final 
+verdict - and serve as a compelling case for the power of **data-driven 
 decision making in sports analytics**.
 
 ---
