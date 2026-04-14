@@ -79,13 +79,18 @@ Handled Outliers: Resolved the outliers by getting the average of players with o
 ## Era and Team Comparisons
 
 - **Player size trends**: Average height and weight have decreased since the 1990s, with a slight plateau in the 2020s. This may reflect increased emphasis on athleticism and versatility.
+- <img width="1389" height="590" alt="average height and weight over time" src="https://github.com/user-attachments/assets/11cdfe16-fd8f-4ce6-a25b-066bd64b8db6" />
+
 - **Scoring trends**: Points and assists per game have risen, likely due to faster pace and 3-point shooting. Rebounds have remained stable, suggesting teams prioritize spacing over rebounding.
 - **Top-performing teams**: The Lakers, Phoenix Suns, Minnesota Timberwolves, Philadelphia Sixers, and Utah Jazz consistently produced top-5 players in scoring, rebounding, or assists across multiple seasons.
-
 - **Vets vs Rookies**: The veterans were significantly better than the rookies in every metric except usage rate. This is due to gaining experience the more games you play.
+- <img width="1489" height="1490" alt="rookie vs vet comp" src="https://github.com/user-attachments/assets/33da3f09-976a-43eb-aee9-834846deb339" />
 
 ## MVP & Dream Team Selection
 
 Comparing the weighted mvp to the actual shows that the model is fairly accurate in predicting the actual mvp.
+-- 40% Points, 30% (Assists + Rebounds), 30% (TS% + Net Rating)
+- <img width="790" height="590" alt="weighted vs actual mvp comp" src="https://github.com/user-attachments/assets/85cd7845-47d5-482d-ac7e-4edd86e373d8" />
+
 
 My dream team would include Russell Westbrook as the point guard, Stephen Curry as the shooting guard, Lebron James as the small forward, Giannis Antetokounmpo as the power forward and Shaquille O'neal as the centre
